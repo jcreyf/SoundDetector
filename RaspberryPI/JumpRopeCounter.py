@@ -20,6 +20,7 @@ port_sounddetector = 17
 # high or low:
 #
 def callbackSoundDetector(port_sounddetector):
+  global counter
   counter += 1
   if GPIO.input(port_sounddetector):
     print(f'H:{counter:5}')
