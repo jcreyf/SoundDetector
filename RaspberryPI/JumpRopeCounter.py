@@ -10,6 +10,7 @@
 
 import RPi.GPIO as GPIO
 import time
+from tkinter import *
 
 counter = 0
 port_sounddetector = 17
@@ -37,5 +38,12 @@ GPIO.add_event_detect(port_sounddetector, GPIO.BOTH, bouncetime=sounddetector_bo
 GPIO.add_event_callback(port_sounddetector, callbackSoundDetector)
 
 # Now loop:
-while True:
-  time.sleep(1)
+#while True:
+#  time.sleep(1)
+
+window = Tk()
+window.title("JumpRope Counter")
+window.geometry('350x200')
+lbl = Label(window, text=f'{counter:5}', font("Arial Bold", 50))
+lbl.grid(column=0, row=0)
+window.mainloop()
