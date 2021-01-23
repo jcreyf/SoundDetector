@@ -24,7 +24,9 @@ def callbackSoundDetector(port_sounddetector):
   global counter
   counter += 1
   print(f'{counter:5}')
-  lblText.set(f'{counter:5}')
+#  lblText.set(f'{counter:5}')
+  lbl.config(text=f'{counter:5}')
+  lbl.update_idletasks()
 
 
 # Setting up the GPIO pin to which the SoundSensor is connected:
@@ -42,13 +44,15 @@ GPIO.add_event_callback(port_sounddetector, callbackSoundDetector)
 #while True:
 #  time.sleep(1)
 
-window = Tk()
+window = Tkinter.Tk()
 window.title("JumpRope Counter")
 window.geometry('350x200')
-lblText = StringVar()
-lbl = Label(window, textvariable=lblText, font=("Arial Bold", 50)).pack()
+#lblText = StringVar()
+#lbl = Tkinter.Label(window, textvariable=lblText, font=("Arial Bold", 50)).pack()
+lbl = Tkinter.Label(window, text=f'{counter:5}', font=("Arial Bold", 50))
 lbl.grid(column=0, row=0)
-lblText.set(f'{counter:5}')
+lbl.pack()
+#lblText.set(f'{counter:5}')
 
 # Now loop:
 window.mainloop()
