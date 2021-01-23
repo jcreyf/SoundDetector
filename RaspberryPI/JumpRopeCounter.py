@@ -13,6 +13,7 @@ import time
 
 counter = 0
 port_sounddetector = 17
+sounddetector_bouncetime = 200
 
 
 #
@@ -31,7 +32,7 @@ GPIO.setup(port_sounddetector, GPIO.IN)
 # Set a filter for an event trigger on the SoundDetector port.
 # We want to get an event on both the high and low values of the port, using
 # a debounce period of 300ms:
-GPIO.add_event_detect(port_sounddetector, GPIO.BOTH, bouncetime=300)
+GPIO.add_event_detect(port_sounddetector, GPIO.BOTH, bouncetime=sounddetector_bouncetime)
 # Attach our callback method:
 GPIO.add_event_callback(port_sounddetector, callbackSoundDetector)
 
