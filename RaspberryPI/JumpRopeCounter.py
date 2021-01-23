@@ -22,7 +22,6 @@ sounddetector_bouncetime = 200
 #
 def callbackSoundDetector(port_sounddetector):
   global counter
-  global lblText
   counter += 1
   print(f'{counter:5}')
   lblText.set(f'{counter:5}')
@@ -39,7 +38,7 @@ GPIO.add_event_detect(port_sounddetector, GPIO.BOTH, bouncetime=sounddetector_bo
 # Attach our callback method:
 GPIO.add_event_callback(port_sounddetector, callbackSoundDetector)
 
-# Now loop:
+# Now loop (the non-GUI version):
 #while True:
 #  time.sleep(1)
 
@@ -47,8 +46,9 @@ window = Tk()
 window.title("JumpRope Counter")
 window.geometry('350x200')
 lblText = StringVar()
-#lbl = Label(window, text=f'{counter:5}', font=("Arial Bold", 50))
 lbl = Label(window, textvariable=lblText, font=("Arial Bold", 50)).pack()
 lbl.grid(column=0, row=0)
 lblText.set(f'{counter:5}')
+
+# Now loop:
 window.mainloop()
