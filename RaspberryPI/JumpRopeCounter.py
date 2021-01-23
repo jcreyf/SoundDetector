@@ -16,19 +16,15 @@ port_sounddetector = 17
 
 
 #
-# Callback method that will get called each time the SoundDetector port goes either
-# high or low:
+# Callback method that will get called each time the SoundDetector triggers:
 #
 def callbackSoundDetector(port_sounddetector):
   global counter
   counter += 1
-  if GPIO.input(port_sounddetector):
-    print(f'H:{counter:5}')
-  else:
-    print(f'H:{counter:5}')
+  print(f'{counter:5}')
 
 
-# Setting up the GPIO pins:
+# Setting up the GPIO pin to which the SoundSensor is connected:
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(port_sounddetector, GPIO.IN)
 
