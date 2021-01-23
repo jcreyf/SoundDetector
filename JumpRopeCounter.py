@@ -22,9 +22,9 @@ GPIO.setup(port_sounddetector, GPIO.IN)
 #
 def callbackSoundDetector(port_sounddetector):
   if GPIO.input(port_sounddetector):
-    print "Sound Detected!"
+    print "Sound Detected! (hi)"
   else:
-    print "Sound Detected!"
+    print "Sound Detected! (low)"
 
 
 # Set a filter for an event trigger on the SoundDetector port.
