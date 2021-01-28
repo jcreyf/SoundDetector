@@ -68,21 +68,21 @@ GPIO.add_event_callback(_port_sounddetector, callbackSoundDetector)
 #  time.sleep(1)
 
 # Create the window object:
-window = tkinter.Tk()
+window = Tk()
 window.title("JumpRope Counter")
 window.geometry('350x200')
 
 # Create the counter label on the window:
-lbl = tkinter.Label(window, text=f'{_counter:5}', font=("Arial Bold", 50))
+lbl = Label(window, text=f'{_counter:5}', font=("Arial Bold", 50))
 lbl.grid(column=0, row=0)
 lbl.pack()
 
 # Add a clear button to reset the counter:
-btnClear = tkinter.Button(window, text="Reset", command=btnReset_Click)
+btnClear = Button(window, text="Reset", command=btnReset_Click)
 btnClear.pack()
 
 # Add a clear button to reset the counter:
-btnPause = tkinter.Button(window, text="Pause", command=btnPause_Click)
+btnPause = Button(window, text="Pause", command=btnPause_Click)
 btnPause.pack()
 
 
