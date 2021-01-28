@@ -73,7 +73,7 @@ window.title("JumpRope Counter")
 window.geometry('350x200')
 
 # Create the counter label on the window:
-lbl = Tkinter.Label(window, text=f'{_counter:5}', font=("Arial Bold", 50))
+lbl = Tkinter.Label(window, text=f'{_counter:5}', font=("Arial Bold", 70))
 lbl.grid(column=0, row=0)
 lbl.pack()
 
