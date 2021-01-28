@@ -24,7 +24,7 @@ def callbackSoundDetector(port_sounddetector):
   global counter
   counter += 1
   print(f'{counter:5}')
-  lbl['text'] = f'{counter:5}')
+  lbl['text'] = f'{counter:5}'
   txtE.delete(0, 'end')
 
 
