@@ -21,7 +21,7 @@ def callbackSoundDetector(port_sounddetector):
   """
   Callback method that will get called each time the SoundDetector triggers
   """
-  global counter, lbl
+  global counter
   counter += 1
   print(f'{counter:5}')
   lbl['text'] = f'{counter:5}')
