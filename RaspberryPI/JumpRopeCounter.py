@@ -46,10 +46,10 @@ def btnPause_Click():
   global _pause
   if _pause:
     _pause=False
-    btnPause_text.set("Resume")
+    btnPause_text.set("Pause")
   else:
     _pause=True
-    btnPause_text.set("Pause")
+    btnPause_text.set("Resume")
 
 
 # Setting up the GPIO pin to which the SoundSensor is connected:
