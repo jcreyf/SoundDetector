@@ -10,44 +10,81 @@
 
 import RPi.GPIO as GPIO
 import time
-from tkinter import *
+from Tkinter import *
 
-counter = 0
-port_sounddetector = 17
-sounddetector_bouncetime = 200
+_counter = 0
+_port_sounddetector = 17
+_sounddetector_bouncetime = 200
+_pause = False
 
 
-def callbackSoundDetector(port_sounddetector):
+def callbackSoundDetector(_port_sounddetector):
   """
   Callback method that will get called each time the SoundDetector triggers
   """
-  global counter
-  counter += 1
-  print(f'{counter:5}')
-  lbl['text'] = f'{counter:5}'
+  global _counter, _pause
+  if not _pause:
+    _counter += 1
+    print(f'{_counter:5}')
+    lbl['text'] = f'{_counter:5}'
+
+
+def btnReset_Click():
+  """
+  Function to reset the counter when the reset button is clicked
+  """
+  global _counter
+  _counter = 0
+  print(f'{_counter:5}')
+  lbl['text'] = f'{_counter:5}'
+
+
+def btnPause_Click():
+  """
+  Function to pause/resume the counter when the pause button is clicked
+  """
+  global _pause
+  if _pause:
+    _pause=False
+    btnPause.text="Resume"
+  else:
+    _pause=True
+    btnPause.text="Pause"
 
 
 # Setting up the GPIO pin to which the SoundSensor is connected:
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(port_sounddetector, GPIO.IN)
+GPIO.setup(_port_sounddetector, GPIO.IN)
 
 # Set a filter for an event trigger on the SoundDetector port.
 # We want to get an event on both the high and low values of the port, using
 # a debounce period of 300ms:
-GPIO.add_event_detect(port_sounddetector, GPIO.BOTH, bouncetime=sounddetector_bouncetime)
+GPIO.add_event_detect(_port_sounddetector, GPIO.BOTH, bouncetime=_sounddetector_bouncetime)
 # Attach our callback method:
-GPIO.add_event_callback(port_sounddetector, callbackSoundDetector)
+GPIO.add_event_callback(_port_sounddetector, callbackSoundDetector)
 
 # Now loop (the non-GUI version):
 #while True:
 #  time.sleep(1)
 
-window = Tk()
+# Create the window object:
+window = Tkinter.Tk()
 window.title("JumpRope Counter")
 window.geometry('350x200')
-lbl = Label(window, text=f'{counter:5}', font=("Arial Bold", 50))
+
+# Create the counter label on the window:
+lbl = Tkinter.Label(window, text=f'{_counter:5}', font=("Arial Bold", 50))
 lbl.grid(column=0, row=0)
 lbl.pack()
 
-# Now loop:
+# Add a clear button to reset the counter:
+btnClear = Button(window, text="Reset", command=btnReset_Click)
+btnClear.pack()
+
+# Add a clear button to reset the counter:
+btnPause = Button(window, text="Pause", command=btnPause_Click)
+btnPause.pack()
+
+
+# Now loop until the cows come home:
 window.mainloop()
