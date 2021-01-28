@@ -10,7 +10,7 @@
 
 import RPi.GPIO as GPIO
 import time
-from tkinter import *
+import tkinter as Tkinter
 
 _counter = 0
 _port_sounddetector = 17
@@ -46,10 +46,10 @@ def btnPause_Click():
   global _pause
   if _pause:
     _pause=False
-    btnPause.text="Resume"
+    btnPause_text.set("Resume")
   else:
     _pause=True
-    btnPause.text="Pause"
+    btnPause_text.set("Pause")
 
 
 # Setting up the GPIO pin to which the SoundSensor is connected:
@@ -68,21 +68,23 @@ GPIO.add_event_callback(_port_sounddetector, callbackSoundDetector)
 #  time.sleep(1)
 
 # Create the window object:
-window = Tk()
+window = Tkinter.Tk()
 window.title("JumpRope Counter")
 window.geometry('350x200')
 
 # Create the counter label on the window:
-lbl = Label(window, text=f'{_counter:5}', font=("Arial Bold", 50))
+lbl = Tkinter.Label(window, text=f'{_counter:5}', font=("Arial Bold", 50))
 lbl.grid(column=0, row=0)
 lbl.pack()
 
 # Add a clear button to reset the counter:
-btnClear = Button(window, text="Reset", command=btnReset_Click)
+btnClear = Tkinter.Button(window, text="Reset", command=btnReset_Click)
 btnClear.pack()
 
 # Add a clear button to reset the counter:
-btnPause = Button(window, text="Pause", command=btnPause_Click)
+btnPause_text = Tkinter.StringVar()
+btnPause = Tkinter.Button(window, textvariable=btnPause_text, command=btnPause_Click)
+btnPause_text.set("Pause")
 btnPause.pack()
 
 
