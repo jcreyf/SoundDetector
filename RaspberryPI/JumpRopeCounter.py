@@ -16,6 +16,7 @@ _counter = 0
 _port_sounddetector = 17
 _sounddetector_bouncetime = 200
 _pause = False
+_lblCounter_textSize = 200
 
 
 def callbackSoundDetector(_port_sounddetector):
@@ -70,10 +71,10 @@ GPIO.add_event_callback(_port_sounddetector, callbackSoundDetector)
 # Create the window object:
 window = Tkinter.Tk()
 window.title("JumpRope Counter")
-window.geometry('350x200')
+window.geometry('800x500')
 
 # Create the counter label on the window:
-lbl = Tkinter.Label(window, text=f'{_counter:5}', font=("Arial Bold", 90))
+lbl = Tkinter.Label(window, text=f'{_counter:5}', font=("Arial Bold", _lblCounter_textSize))
 lbl.grid(column=0, row=0)
 lbl.pack()
 
