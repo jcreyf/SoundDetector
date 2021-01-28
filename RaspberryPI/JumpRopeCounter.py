@@ -25,7 +25,6 @@ def callbackSoundDetector(port_sounddetector):
   counter += 1
   print(f'{counter:5}')
   lbl['text'] = f'{counter:5}'
-  txtE.delete(0, 'end')
 
 
 # Setting up the GPIO pin to which the SoundSensor is connected:
@@ -49,9 +48,6 @@ window.geometry('350x200')
 lbl = Label(window, text=f'{counter:5}', font=("Arial Bold", 50))
 lbl.grid(column=0, row=0)
 lbl.pack()
-txtE = Entry(window)
-txtE.focus()
-txtE.pack()
 
 # Now loop:
 window.mainloop()
