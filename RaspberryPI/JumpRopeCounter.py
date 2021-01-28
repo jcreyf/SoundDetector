@@ -71,7 +71,7 @@ GPIO.add_event_callback(_port_sounddetector, callbackSoundDetector)
 # Create the window object:
 window = Tkinter.Tk()
 window.title("JumpRope Counter")
-window.geometry('1300x700')
+window.geometry('1350x700')
 
 # Create the counter label on the window:
 lbl = Tkinter.Label(window, text=f'{_counter:5}', font=("Arial Bold", _lblCounter_textSize))
