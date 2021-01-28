@@ -43,10 +43,10 @@ GPIO.add_event_callback(port_sounddetector, callbackSoundDetector)
 #while True:
 #  time.sleep(1)
 
-window = Tkinter.Tk()
+window = Tk()
 window.title("JumpRope Counter")
 window.geometry('350x200')
-lbl = Tkinter.Label(window, text=f'{counter:5}', font=("Arial Bold", 50))
+lbl = Label(window, text=f'{counter:5}', font=("Arial Bold", 50))
 lbl.grid(column=0, row=0)
 lbl.pack()
 txtE = Entry(window)
