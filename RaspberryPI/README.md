@@ -9,7 +9,7 @@ All by all, I think I'm getting close to 95% accuracy, which I call a "success!"
 Counting in my head was getting just as exhausting as jumping the rope!  I can now jump much longer since I no longer need to count and who cares whether I jumped 950 times or 1050 times when the counter shows 1000!?  Breaking sweat is what I'm after...<br>
 I can now finally listen to podcasts while jumping or enjoy the music more (sound needs to come through ear plugs though since the sound may interfere with the sound detection if it comes through speakers).
 <br>
-<img src="../_documentation/resources/JumpRopeCounter_screenshot.jpg" alt="JumpRopeCounter screenshot" width="500">
+<img src="../_documentation/resources/JumpRopeCounter_screenshot.jpg" alt="JumpRopeCounter screenshot" width="500"><br>
 (I have a 7" touchscreen LCD connected to the RPi and run the standard RaspberryOS with GUI)
 
 ---
