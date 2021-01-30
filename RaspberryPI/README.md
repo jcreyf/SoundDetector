@@ -1,7 +1,7 @@
 # Projects using the [RaspberryPI](https://www.raspberrypi.org/products/):
 <img src="../_documentation/resources/rpi.jpg" alt="The Raspberry PI platform" width="200">
 
-# JumpRopeCounter
+## JumpRopeCounter
 Try to detect the sound of the rope hitting the floor and using that as a trigger to keep count of how many times you jumped since you started the app or pressed the `Reset` button.<br>
 The app also allows to `Pause` counting in case you want to take a break or to pause in between sets.<br>
 The app is listening for sounds, so you have to adjust the sensor to filter out as much ambient sound as possible and you obviously get the best result if you can direct the sensor to the spot on the floor where the rope is hitting.<br>
