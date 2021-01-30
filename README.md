@@ -4,6 +4,6 @@ Projects using the Daoki Sound Sensor:<br>
 
 Ideas and initial code taken from: [Piddler In The Root](http://www.piddlerintheroot.com/sound-sensor/)
 
-We have projects based on these boards:
+I have projects based on these boards:
 - [RaspberryPI](RaspberryPI);
 - [ESP32](esp32);
